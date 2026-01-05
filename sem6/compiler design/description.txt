@@ -1,1 +1,124 @@
+Lexical Analysis is the first phase of compilation where source code is converted into a stream of tokens. It's also called scanning or tokenization.
+
+
+_________________________________________________________________________________________________________________________________________________________________________
+* run lexical_analyser.py()
+# output ::
+
+SOURCE CODE:
+
+    int main() {
+        int x = 10;
+        float y = 20.5;
+        // This is a comment
+        if (x < y) {
+            print("x is less than y");
+            return 0;
+        }
+        /* Multi-line
+           comment */
+        x = x + 1;
+    }
+
+
+======================================================================
+LEXICAL ANALYSIS RESULTS
+======================================================================
+Token Type           Lexeme               Line     Column
+----------------------------------------------------------------------
+KEYWORD              int                  2        5
+KEYWORD              main                 2        9
+LPAREN               (                    2        13
+RPAREN               )                    2        14
+LBRACE               {                    2        16
+KEYWORD              int                  3        9
+IDENTIFIER           x                    3        13
+ASSIGN               =                    3        15
+INTEGER              10                   3        17
+SEMICOLON            ;                    3        19
+KEYWORD              float                4        9
+IDENTIFIER           y                    4        15
+ASSIGN               =                    4        17
+FLOAT                20.5                 4        19
+SEMICOLON            ;                    4        23
+COMMENT              // This is a comment 5        9
+KEYWORD              if                   6        9
+LPAREN               (                    6        12
+IDENTIFIER           x                    6        13
+LESS_THAN            <                    6        15
+IDENTIFIER           y                    6        17
+RPAREN               )                    6        18
+LBRACE               {                    6        20
+KEYWORD              print                7        13
+LPAREN               (                    7        18
+STRING               "x is less than y"   7        19
+RPAREN               )                    7        37
+SEMICOLON            ;                    7        38
+KEYWORD              return               8        13
+INTEGER              0                    8        20
+SEMICOLON            ;                    8        21
+RBRACE               }                    9        9
+COMMENT              /* Multi-line
+           comment */ 10       9
+IDENTIFIER           x                    11       9
+ASSIGN               =                    11       11
+IDENTIFIER           x                    11       13
+PLUS                 +                    11       15
+INTEGER              1                    11       17
+SEMICOLON            ;                    11       18
+RBRACE               }                    12       5
+======================================================================
+Total Tokens: 40
+======================================================================
+
+DETAILED TOKEN LIST:
+<KEYWORD, 'int', Line:2, Col:5>
+<KEYWORD, 'main', Line:2, Col:9>
+<LPAREN, '(', Line:2, Col:13>
+<RPAREN, ')', Line:2, Col:14>
+<LBRACE, '{', Line:2, Col:16>
+<KEYWORD, 'int', Line:3, Col:9>
+<IDENTIFIER, 'x', Line:3, Col:13>
+<ASSIGN, '=', Line:3, Col:15>
+<INTEGER, '10', Line:3, Col:17>
+<SEMICOLON, ';', Line:3, Col:19>
+<KEYWORD, 'float', Line:4, Col:9>
+<IDENTIFIER, 'y', Line:4, Col:15>
+<ASSIGN, '=', Line:4, Col:17>
+<FLOAT, '20.5', Line:4, Col:19>
+<SEMICOLON, ';', Line:4, Col:23>
+<COMMENT, '// This is a comment', Line:5, Col:9>
+<KEYWORD, 'if', Line:6, Col:9>
+<LPAREN, '(', Line:6, Col:12>
+<IDENTIFIER, 'x', Line:6, Col:13>
+<LESS_THAN, '<', Line:6, Col:15>
+<IDENTIFIER, 'y', Line:6, Col:17>
+<RPAREN, ')', Line:6, Col:18>
+<LBRACE, '{', Line:6, Col:20>
+<KEYWORD, 'print', Line:7, Col:13>
+<LPAREN, '(', Line:7, Col:18>
+<STRING, '"x is less than y"', Line:7, Col:19>
+<RPAREN, ')', Line:7, Col:37>
+<SEMICOLON, ';', Line:7, Col:38>
+<KEYWORD, 'return', Line:8, Col:13>
+<INTEGER, '0', Line:8, Col:20>
+<SEMICOLON, ';', Line:8, Col:21>
+<RBRACE, '}', Line:9, Col:9>
+<COMMENT, '/* Multi-line
+           comment */', Line:10, Col:9>
+<IDENTIFIER, 'x', Line:11, Col:9>
+<ASSIGN, '=', Line:11, Col:11>
+<IDENTIFIER, 'x', Line:11, Col:13>
+<PLUS, '+', Line:11, Col:15>
+<INTEGER, '1', Line:11, Col:17>
+<SEMICOLON, ';', Line:11, Col:18>
+<RBRACE, '}', Line:12, Col:5>
+
+
+
+
+______________________________________________________________________________________________________________________________________________________________________
+
+practical 2
+
 
